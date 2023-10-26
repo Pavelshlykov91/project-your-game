@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   Question.init({
     theme_id: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'Themes',
@@ -19,15 +19,15 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
     content: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       allowNull: false
     },
     answer: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       allowNull: false
     },
     price: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false
     }
   }, {
