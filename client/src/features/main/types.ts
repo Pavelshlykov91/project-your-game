@@ -1,7 +1,7 @@
 export type Theme = {
   id: number;
   title: string;
-  question: Question[];
+  Questions: Question[];
 };
 
 export type Question = {

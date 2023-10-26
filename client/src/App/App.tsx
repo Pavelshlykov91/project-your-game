@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import MainPage from '../features/main/MainPage';
 import './App.css';
-import * as api from './api';
+import * as api from '../features/main/api';
 import { useAppDispatch } from '../redux/store';
 
 function App(): JSX.Element {
