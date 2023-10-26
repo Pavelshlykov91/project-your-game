@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NavBar = () => {
+const NavBar = (): JSX.Element => {
   return <div>NavBar</div>;
 };
 
