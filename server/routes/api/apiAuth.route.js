@@ -25,4 +25,18 @@ router.post('/reg', async (req, res) => {
   }
 })
 
+router.get('/logout', async (req, res) => {
+  try {
+    req.session.destroy((error) => {
+      if (error) {
+        return res.status(500).json({ message: 'Ошибка при удалении сессии' })
+      }
+
+      res.clearCookie('user_sid').json({ message: 'Успешный выход' })
+    })
+  } catch ({ error }) {
+    res.status(400).json({ error })
+  }
+})
+
 module.exports = router

@@ -1,11 +1,14 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 /* eslint-disable import/extensions */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useAppDispatch} from '../../redux/store';
 import * as api from './api'
 
 function RegPageForm(): JSX.Element {
+  const navigate = useNavigate()
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
  
@@ -18,7 +21,9 @@ function RegPageForm(): JSX.Element {
     
     api
     .RegFetch({login, password})
-    .then((data) => dispatch({type: 'users/reg', payload: data }))
+    .then((data) =>{ 
+    dispatch({type: 'users/reg', payload: data })
+    navigate('/themes')})
     .catch((err)=>console.log(err)
     )
     
