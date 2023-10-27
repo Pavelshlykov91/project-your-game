@@ -6,9 +6,14 @@ export type ThemeState = {
 };
 
 export type UsersState = {
-  users: User[];
+  user: User|undefined
 };
 
-export type Action =
-  | { type: 'themes/load'; payload: Theme[] }
-  | { type: 'users/reg'; payload: User };
+
+
+export type Action = 
+|{ type: 'themes/load'; payload: Theme[]}
+|{ type: 'users/reg'; payload: User }
+|{ type: 'users/check'; payload: User }
+|{ type: 'users/logout'; payload:string}
+
