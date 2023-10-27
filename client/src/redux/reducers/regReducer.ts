@@ -7,11 +7,15 @@ export const initState: UsersState = {
 
 const regReducer = (state: UsersState = initState, action: Action): UsersState => {
   switch (action.type) {
-    case 'users/reg': 
+    case 'users/reg':
       return {
         ...state,
         users: [...state.users, action.payload],
       };
+      case 'users/load':
+       
+          return { ...state, users: action.payload };
+        
     default:
       return state;
   }

@@ -1,5 +1,5 @@
 import type { Theme } from '../features/main/types';
-import { User } from '../features/rega/type';
+import type { User } from '../features/rega/type';
 
 export type ThemeState = {
   themes: Theme[];
@@ -11,4 +11,5 @@ export type UsersState = {
 
 export type Action =
   | { type: 'themes/load'; payload: Theme[] }
-  | { type: 'users/reg'; payload: User };
+  | { type: 'users/reg'; payload: User }
+  | { type: 'users/load'; payload: User[] };

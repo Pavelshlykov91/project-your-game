@@ -4,6 +4,7 @@ import MainPage from '../features/main/MainPage';
 import './App.css';
 import * as api from '../features/main/api';
 import { useAppDispatch } from '../redux/store';
+import ScorePage from '../features/score/ScorePage';
 // import RegPageForm from '../features/rega/RegPageForm';
 
 function App(): JSX.Element {
@@ -19,7 +20,8 @@ function App(): JSX.Element {
   return (
     <div>
       {/* <RegPageForm /> */}
-      <MainPage />
+      {/* <MainPage /> */}
+      <ScorePage />
     </div>
   );
 }

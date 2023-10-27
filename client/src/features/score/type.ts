@@ -8,7 +8,3 @@ export type User = {
   
   export type UserID = User['id'];
   
-  export type AddUser = {
-    login: string;
-    password: string;
-  };
