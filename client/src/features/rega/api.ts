@@ -6,6 +6,7 @@ export const RegFetch = async ({
     login,
     password
   }): Promise<User> => {
+  
     
     
   const res = await (

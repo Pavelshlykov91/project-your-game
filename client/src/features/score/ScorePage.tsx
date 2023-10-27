@@ -12,6 +12,7 @@ import * as api from './api'
 const ScorePage = (): JSX.Element => {
   const dispatch = useAppDispatch();
 
+
   useEffect(() => {
     api
       .fetchUsers()
@@ -22,14 +23,15 @@ const ScorePage = (): JSX.Element => {
   const users = useSelector((store: RootState) => store.users.users);
 
 
+
   return (
    
         <div className="users__container">
-
-          {users.map((user) => (
-                <div key={user.id} className="score__container">
-                <h2>{user.login}</h2>
-                <h2>{user.score} баллов</h2>
+ddddddddddd
+          {users?.map((user?) => (
+                <div key={user?.id} className="score__container">
+                <h2>{user?.login}</h2>
+                <h2>{user?.score} баллов</h2>
                 </div>
            
           ))}

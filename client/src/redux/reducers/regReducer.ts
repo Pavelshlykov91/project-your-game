@@ -3,7 +3,8 @@
 import type { Action, UsersState } from '../types';
 
 export const initState: UsersState = {
-  user: undefined 
+  user: undefined,
+  users:[]
 };
 
 const regReducer = (state: UsersState = initState, action: Action): UsersState => {
@@ -22,7 +23,7 @@ const regReducer = (state: UsersState = initState, action: Action): UsersState =
         if (action.payload.message === 'Успешный выход') {
           return {
             ...state,
-            user: null,
+            user,
             errorMessage: '',
           }
         }

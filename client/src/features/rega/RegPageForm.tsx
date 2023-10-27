@@ -16,7 +16,7 @@ function RegPageForm(): JSX.Element {
 
   const onHandleUserAdd = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
-    console.log(login);
+
 
     api
       .RegFetch({ login, password })
