@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import QuestionItem from './QuestionItem';
 import type { RootState } from '../../redux/store';
 import type { Theme } from './types';
+import './main.css';
 
 const MainPage = (): JSX.Element => {
   const themes: Theme[] = useSelector((store: RootState) => store.main.themes);
@@ -14,7 +15,7 @@ const MainPage = (): JSX.Element => {
           <div className="theme_name">{theme.title}</div>
           <div className="question_container">
             {theme.Questions.map((question) => (
-              <div key={question.id}>
+              <div className='questionName' key={question.id}>
                 <QuestionItem key={question.id} question={question} />
               </div>
             ))}

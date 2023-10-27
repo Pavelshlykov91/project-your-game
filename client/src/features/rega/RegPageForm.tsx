@@ -6,6 +6,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '../../redux/store';
 import * as api from './api';
+import './rega.css';
 
 function RegPageForm(): JSX.Element {
   const navigate = useNavigate();
@@ -30,17 +31,17 @@ function RegPageForm(): JSX.Element {
   };
 
   return (
-    <div>
+    <div className='formReg'>
       <form onSubmit={onHandleUserAdd}>
-        <input value={login} onChange={(e) => setLogin(e.target.value)} name="login" type="text" />
+        <input placeholder='логин' value={login} onChange={(e) => setLogin(e.target.value)} name="login" type="text" />
 
-        <input
+        <input placeholder='пароль'
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           name="password"
           type="text"
         />
-        <button type="submit">Submit</button>
+        <button className='regbtn'  type="submit">Зарегистрироваться</button>
       </form>
     </div>
   );

@@ -43,22 +43,22 @@ const Modal = ({
               </button>
             </>
           ) : (
-            <>
+            <div className='boxQuest'>
               <div className="question_item">{question.content}</div>
               <div className="answerDiv">
-                <label>
-                  Otvet:
+                <label className='otvet'>
+                  Ваш ответ:
                   <input
                     className="answerInput"
                     value={answerInput}
                     onChange={(e) => setAnswerInput(e.target.value)}
                   />
-                  <button type="button" onClick={answerQuestion}>
-                    Submit
+                  <button className='btnOrange' type="button" onClick={answerQuestion}>
+                    Отправить
                   </button>
                 </label>
               </div>
-            </>
+            </div>
           )}
         </div>
       </div>

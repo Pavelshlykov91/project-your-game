@@ -1,0 +1,30 @@
+/* .formReg {
+    margin-top: 80px;
+    display: flex;
+    width: 700px;
+    height: 400px;
+    
+    flex-direction: column-reverse;
+    background-color: #6321A6;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    border: 2px #D98825 solid;
+    border-radius: 20px;
+}
+
+form {
+background-color: #14296C ;
+border-radius: 20px;
+border: 2px #D98825 solid;
+width: 600px;
+height: 150px;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 30px;
+}
+
+.regbtn {
+    background-color: #D98825;
+} */

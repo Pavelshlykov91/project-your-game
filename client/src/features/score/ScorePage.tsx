@@ -21,14 +21,17 @@ const ScorePage = (): JSX.Element => {
   }, []);
 
   const users = useSelector((store: RootState) => store.users.users);
+  const keySort = 'score'; // ключ, по которому будем сортировать
+const sorted = users.sort((user1, user2) => user1[keySort] < user2[keySort] ? 1 : -1);
+
 
 
 
   return (
    
         <div className="users__container">
-ddddddddddd
-          {users?.map((user?) => (
+
+          {sorted?.map((user?) => (
                 <div key={user?.id} className="score__container">
                 <h2>{user?.login}</h2>
                 <h2>{user?.score} баллов</h2>
