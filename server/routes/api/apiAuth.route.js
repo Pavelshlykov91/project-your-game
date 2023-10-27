@@ -13,7 +13,8 @@ router.post('/reg', async (req, res) => {
         const userData = await User.create({ login, password: hash })
 
         req.session.userId = userData.id
-        res.status(200).json({  user: userData })
+
+        res.status(200).json({ user: userData })
       } else {
         res.status(400).json({ message: 'Такой пользователь уже существует' })
       }
@@ -23,6 +24,13 @@ router.post('/reg', async (req, res) => {
   } catch ({ error }) {
     res.status(400).json({ error })
   }
+})
+
+router.get('/user-check', async (req, res) => {
+  if (req.session.userId) {
+    const check = await User.findOne({ where: { id: req.session.userId } })
+    res.status(200).json(check)
+  } 
 })
 
 router.get('/logout', async (req, res) => {

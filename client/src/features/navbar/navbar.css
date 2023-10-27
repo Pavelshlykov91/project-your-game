@@ -1,6 +1,6 @@
 .header {
     height: 4rem;
-    position: absolute;
+    /* position: absolute; */
     top: 0;
     width: calc(100% - 4rem);
     display: flex;

@@ -20,5 +20,7 @@ export const RegFetch = async ({
       }),
     })
   ).json();
+
+  
   return res;
 };

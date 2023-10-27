@@ -6,7 +6,7 @@ import navbarReducer from './navbarReducer';
 const rootReducer = combineReducers({
   main: mainReducer,
   users:regReducer,
-  user:navbarReducer,
+  // user:navbarReducer,
 });
 
 export default rootReducer;

@@ -1,51 +1,58 @@
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
-import React from 'react'
-import { Outlet } from 'react-router'
-import { Link } from 'react-router-dom'
+import React, { useEffect } from 'react';
+import { Outlet } from 'react-router';
+import { Link } from 'react-router-dom';
 
-import './navbar.css'
-import { useDispatch, useSelector } from 'react-redux'
-import * as api from './api'
-import type { RootState } from '../../redux/store'
+import './navbar.css';
+import { useDispatch, useSelector } from 'react-redux';
+import * as api from './api';
+import type { RootState } from '../../redux/store';
 
 function Navbar(): JSX.Element {
-  const dispatch = useDispatch()
-  const user = useSelector((store: RootState) => store.users)
+  const dispatch = useDispatch();
+  const user = useSelector((store: RootState) => store.users.user);
 
-  
+  // useEffect(() => {
+  //   console.log(user?.id);
+  // }, [user]);
 
-
-
-  const logout = (): void => {
-
+  useEffect(() => {
     api
-     .logoutFetch()
-     .then((data) => {dispatch({ type: 'user/logout', payload: data })
+      .CheckFetch()
+      .then((data) => dispatch({ type: 'users/check', payload: data }))
+      .catch((err) => console.log(err));
+  }, [user]);
+  
+  const logout = (): void => {
+    api
+      .logoutFetch()
+      .then((data) => {
+        dispatch({ type: 'user/logout', payload: data });
       })
-      .catch((error) => console.log(error))
-  }
+      .catch((error) => console.log(error));
+  };
 
   return (
     <>
       <header className="header">
-         <div className="header__score">{user?.login}: {user?.score} баллов</div>
+        <div className="header__score">
+          {user?.login}: {user?.score} баллов
+        </div>
         <div className="header__nav">
-
           <Link to="/leaders" className="header__button outlined">
             Рейтинг игроков
           </Link>
-          {user? (
+          {user ? (
             <Link to="/" onClick={logout} style={{ textDecoration: 'none', color: 'white' }}>
-                <div className="header__button ">Выйти</div>
-              </Link>
+              <div className="header__button ">Выйти</div>
+            </Link>
           ) : (
             <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>
               <div className="header__button ">Регистрация</div>
             </Link>
           )}
-
         </div>
       </header>
       <Outlet />
@@ -69,7 +76,7 @@ function Navbar(): JSX.Element {
     //     )}
     //   </div>
     // </header>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

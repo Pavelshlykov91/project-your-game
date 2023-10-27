@@ -4,36 +4,36 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAppDispatch} from '../../redux/store';
-import * as api from './api'
+import { useAppDispatch } from '../../redux/store';
+import * as api from './api';
 
 function RegPageForm(): JSX.Element {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
- 
 
   const dispatch = useAppDispatch();
 
   const onHandleUserAdd = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
     console.log(login);
-    
+
     api
-    .RegFetch({login, password})
-    .then((data) =>{ 
-    dispatch({type: 'users/reg', payload: data })
-    navigate('/themes')})
-    .catch((err)=>console.log(err)
-    )
-    
+      .RegFetch({ login, password })
+      .then((data) => {
+        console.log(data);
+        
+        dispatch({ type: 'users/reg', payload: data });
+        navigate('/themes');
+      })
+      .catch((err) => console.log(err));
   };
-  
+
   return (
     <div>
       <form onSubmit={onHandleUserAdd}>
         <input value={login} onChange={(e) => setLogin(e.target.value)} name="login" type="text" />
-       
+
         <input
           value={password}
           onChange={(e) => setPassword(e.target.value)}
