@@ -10,8 +10,10 @@ export type UsersState = {
 };
 
 
+
 export type Action = 
 |{ type: 'themes/load'; payload: Theme[]}
 |{ type: 'users/reg'; payload: User }
 |{ type: 'users/check'; payload: User }
 |{ type: 'users/logout'; payload:string}
+
