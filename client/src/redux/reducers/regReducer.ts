@@ -8,25 +8,16 @@ export const initState: UsersState = {
 
 const regReducer = (state: UsersState = initState, action: Action): UsersState => {
   switch (action.type) {
-    case 'users/reg': 
+    case 'users/reg':
       return {
         ...state,
         user: action.payload,
       };
 
-      // case 'users/logout':
-      //     if (action.payload.message === 'Успешный выход') {
-      //       return {
-      //         ...state,
-      //         user: null,
-      //         errorMessage: '',
-      //       }},
-
-      //       case 'users/check':
-      //         return {
-      //           ...state,
-      //           user: action.payload,
-      //         };
+      case 'users/load':
+       
+          return { ...state, users: action.payload };
+  
       case 'users/logout':
         if (action.payload.message === 'Успешный выход') {
           return {
@@ -42,7 +33,7 @@ const regReducer = (state: UsersState = initState, action: Action): UsersState =
           ...state,
           user: action.payload,
         };
-    
+
     default:
       return state;
   }

@@ -6,8 +6,11 @@ import { Route, Routes } from 'react-router-dom';
 import * as api from '../features/main/api';
 import * as api2 from '../features/navbar/api';
 import { useAppDispatch } from '../redux/store';
+
+import ScorePage from '../features/score/ScorePage';
 import RegPageForm from '../features/rega/RegPageForm';
 import Navbar from '../features/navbar/NavBar';
+
 
 
 function App(): JSX.Element {
@@ -30,13 +33,13 @@ function App(): JSX.Element {
 
 
   return (
-
     <Routes>
       <Route path="/" element={<Navbar />}>
         <Route path="/" element={<RegPageForm />} />
         <Route path="/themes" element={<MainPage />} />
       </Route>
     </Routes>
+
 
   );
 }
