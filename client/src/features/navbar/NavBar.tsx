@@ -23,7 +23,7 @@ function Navbar(): JSX.Element {
       .CheckFetch()
       .then((data) => dispatch({ type: 'users/check', payload: data }))
       .catch((err) => console.log(err));
-  }, [user]);
+  }, []);
   
   const logout = (): void => {
     api

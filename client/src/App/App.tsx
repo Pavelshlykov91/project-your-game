@@ -8,7 +8,6 @@ import * as api2 from '../features/navbar/api';
 import { useAppDispatch } from '../redux/store';
 import RegPageForm from '../features/rega/RegPageForm';
 import Navbar from '../features/navbar/NavBar';
-import MainPage from '../features/main/MainPage';
 
 
 function App(): JSX.Element {
