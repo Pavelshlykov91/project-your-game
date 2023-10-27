@@ -1,14 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 /* eslint-disable import/prefer-default-export */
-import { User } from './type';
+import type { User } from './type';
 
-export const RegFetch = async ({
-    login,
-    password
-  }): Promise<User> => {
-  
-    
-    
+export const RegFetch = async ({ login, password }): Promise<User> => {
   const res = await (
     await fetch('/api/auth/reg', {
       method: 'post',
@@ -22,6 +16,7 @@ export const RegFetch = async ({
     })
   ).json();
 
-  
+  console.log(res.user);
+
   return res;
 };

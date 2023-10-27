@@ -24,7 +24,7 @@ function Navbar(): JSX.Element {
       .then((data) => dispatch({ type: 'users/check', payload: data }))
       .catch((err) => console.log(err));
   }, []);
-  
+
   const logout = (): void => {
     api
       .logoutFetch()
@@ -34,11 +34,13 @@ function Navbar(): JSX.Element {
       .catch((error) => console.log(error));
   };
 
+  console.log(user);
+
   return (
     <>
       <header className="header">
         <div className="header__score">
-          {user?.login}: {user?.score} баллов
+          {user?.login}: {user?.score} твои баллы
         </div>
         <div className="header__nav">
           <Link to="/users" className="header__button outlined">

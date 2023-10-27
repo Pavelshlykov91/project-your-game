@@ -4,7 +4,7 @@ import type { Action, UsersState } from '../types';
 
 export const initState: UsersState = {
   user: undefined,
-  users:[]
+  users: [],
 };
 
 const regReducer = (state: UsersState = initState, action: Action): UsersState => {
@@ -15,25 +15,24 @@ const regReducer = (state: UsersState = initState, action: Action): UsersState =
         user: action.payload,
       };
 
-      case 'users/load':
-       
-          return { ...state, users: action.payload };
-  
-      case 'users/logout':
-        if (action.payload.message === 'Успешный выход') {
-          return {
-            ...state,
-            user,
-            errorMessage: '',
-          }
-        }
-        return state;
-      
-      case 'users/check':
+    // case 'users/load':
+    //   return { ...state, user: action.payload };
+
+    case 'users/check':
+      return {
+        ...state,
+        user: action.payload,
+      };
+
+    case 'users/logout':
+      if (action.payload.message === 'Успешный выход') {
         return {
           ...state,
-          user: action.payload,
+          user,
+          errorMessage: '',
         };
+      }
+      return state;
 
     default:
       return state;
