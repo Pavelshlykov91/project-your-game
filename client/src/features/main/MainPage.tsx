@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
-// import QuestionItem from './QuestionItem';
+import QuestionItem from './QuestionItem';
 import type { RootState } from '../../redux/store';
 import type { Theme } from './types';
-import Modal from '../modal/Modal';
 
 const MainPage = (): JSX.Element => {
   const themes: Theme[] = useSelector((store: RootState) => store.main.themes);
-  const [modalActive, setModalActive] = useState(false);
 
   return (
     <div className="card_container">
@@ -17,11 +15,7 @@ const MainPage = (): JSX.Element => {
           <div className="question_container">
             {theme.Questions.map((question) => (
               <div key={question.id}>
-                {/* <QuestionItem key={question.id} question={question} /> */}
-                <button className="open-btn" type="button" onClick={() => setModalActive(true)}>
-                  {question.price}
-                </button>
-                <Modal active={modalActive} setActive={setModalActive} question={question} />
+                <QuestionItem key={question.id} question={question} />
               </div>
             ))}
           </div>
