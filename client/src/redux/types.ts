@@ -9,7 +9,6 @@ export type UsersState = {
   users: User[];
 };
 
-
-export type Action = 
-|{ type: 'themes/load'; payload: Theme[]}
-|{ type: 'users/reg'; payload: User }
+export type Action =
+  | { type: 'themes/load'; payload: Theme[] }
+  | { type: 'users/reg'; payload: User };
