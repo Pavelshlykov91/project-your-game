@@ -23,20 +23,13 @@ function App(): JSX.Element {
       .catch((err) => console.log(err));
   }, []);
 
-  // useEffect(() => {
-  //   api2
-  //     .CheckFetch()
-  //     .then((data) => dispatch({ type: 'users/check', payload: data }))
-  //     .catch((err) => console.log(err));
-  // }, []);
-
-
 
   return (
     <Routes>
       <Route path="/" element={<Navbar />}>
         <Route path="/" element={<RegPageForm />} />
         <Route path="/themes" element={<MainPage />} />
+        <Route path="/users" element={<ScorePage />} />
       </Route>
     </Routes>
 

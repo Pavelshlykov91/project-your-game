@@ -3,9 +3,13 @@ const { User } = require('../../db/models')
 
 const router = require('express').Router()
 
+
 router.post('/reg', async (req, res) => {
+  console.log('asasasasasa');
   try {
+    
     const { login, password } = req.body
+    
     if (login && password) {
       const user = await User.findOne({ where: { login } })
       if (!user) {

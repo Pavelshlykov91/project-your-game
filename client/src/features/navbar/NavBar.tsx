@@ -41,7 +41,7 @@ function Navbar(): JSX.Element {
           {user?.login}: {user?.score} баллов
         </div>
         <div className="header__nav">
-          <Link to="/leaders" className="header__button outlined">
+          <Link to="/users" className="header__button outlined">
             Рейтинг игроков
           </Link>
           {user ? (
