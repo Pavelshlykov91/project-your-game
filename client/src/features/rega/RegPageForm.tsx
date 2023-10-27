@@ -6,6 +6,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '../../redux/store';
 import * as api from './api';
+import './rega.css';
 
 function RegPageForm(): JSX.Element {
   const navigate = useNavigate();
@@ -28,6 +29,7 @@ function RegPageForm(): JSX.Element {
   };
 
   return (
+
     <div
       style={{
         display: 'flex',
@@ -54,6 +56,7 @@ function RegPageForm(): JSX.Element {
           }}
         />
         <input
+
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           name="password"
@@ -66,6 +69,7 @@ function RegPageForm(): JSX.Element {
             marginTop: '20px', // добавляем отступ сверху
           }}
         />
+
 
         <button
           type="submit"
@@ -80,6 +84,7 @@ function RegPageForm(): JSX.Element {
         >
           Submit
         </button>
+
       </form>
     </div>
   );

@@ -1,7 +1,7 @@
 .modal {
   height: 100vh;
   width: 100vw;
-  background-color: rgba(0, 0, 0, 0.02);
+  background-color: rgba(0, 0, 0, 0.2);
   position: fixed;
   top: 0;
   left: 0;
@@ -19,15 +19,60 @@
 }
 
 .modal_content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 20px;
   border-radius: 12px;
-  background-color: blue;
+  background-color: #4c1f8c;
   transform: scale(0.5);
   transition: 0.4s all;
   width: 80vw;
   height: 80vh;
+  border: 2px #d98825 solid;
 }
 
 .modal_content.active {
   transform: scale(1);
+}
+
+.boxQuest {
+  width: 500px;
+  height: 350px;
+  border: 2px #d98825 solid;
+  background-color: #20316a;
+  display: flex;
+  border-radius: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* gap: 10px; */
+  margin-top: 80px;
+  padding: 30px;
+}
+.otvet {
+  gap: 40px;
+  padding: 30px;
+}
+
+.question_item {
+  font-size: x-large;
+}
+
+.btnOrange {
+  background-color: #d98825;
+  color: black;
+  margin: 10px;
+}
+.answerInput {
+  height: 30px;
+  width: 250px;
+  margin: 10px;
+  border-radius: 10px;
+}
+.otvet {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }

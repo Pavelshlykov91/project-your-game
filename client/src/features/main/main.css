@@ -1,0 +1,52 @@
+
+
+.card_container {
+    margin-top: 50px;
+    display: flex;
+    width: 700px;
+    
+    flex-direction: column-reverse;
+    background-color: #20316a;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    border: 2px #ffffff solid;
+    border-radius: 20px;
+    height: 400px;
+    padding: 20px;
+    
+}
+.theme_container {
+    
+    display: flex;
+    align-items: center;
+   height: 70px;
+   border: 2px #ffffff solid;
+   border-radius: 20px;
+    background-color:#D98825;
+    gap: 20px;
+    width: 90%;
+    padding: 20px;
+    margin: 10px;
+
+
+}
+
+.question_container {
+
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    height: 70px;
+   
+}
+.open-btn {
+    width: 80px;
+    height: 50px;
+  
+}
+.theme_name {
+    font-size: x-large;
+    color: black;
+    font-weight: 600;
+}
